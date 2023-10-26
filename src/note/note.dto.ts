@@ -1,4 +1,4 @@
-import { IsEmpty, IsNotEmpty, IsString } from "class-validator"
+import { IsEmpty, IsNotEmpty, IsNumber, IsString } from "class-validator"
 
 export class CreateNoteDto {
     @IsNotEmpty()
@@ -8,6 +8,10 @@ export class CreateNoteDto {
     @IsNotEmpty()
     @IsString()
     content: string;
+
+    @IsNotEmpty()
+    @IsNumber()
+    authorId: number;
 }
 export class UpdateNoteDto {
     title: string
